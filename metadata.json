@@ -1,0 +1,5 @@
+{
+  "name": "Appraise 0.5",
+  "description": "A minimal, AI-powered tool for clinicians to generate appraisal-ready summaries and reflections.",
+  "requestFramePermissions": []
+}
