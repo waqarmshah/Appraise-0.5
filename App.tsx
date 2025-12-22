@@ -242,51 +242,56 @@ const App: React.FC = () => {
               <OutputDisplay content={output} />
             </div>
           ) : (
-            /* Premium Ghost State */
-            <div className="h-full rounded-2xl bg-gradient-to-br from-white to-slate-50/50 border border-slate-100 p-8 shadow-sm relative overflow-hidden flex flex-col gap-10 opacity-70">
-               {/* Decorative soft gradient blob */}
-               <div className="absolute top-0 right-0 w-64 h-64 bg-teal-50/50 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+            /* Premium Ghost State / Scaffold */
+            <div className="h-full rounded-2xl bg-gradient-to-br from-white via-slate-50/50 to-slate-100/30 border border-slate-200/60 p-8 relative overflow-hidden flex flex-col gap-8 transition-all">
+               {/* Very subtle background pulse */}
+               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-teal-50/5 animate-pulse-slow pointer-events-none"></div>
 
-               {/* Skeleton Item 1 */}
-               <div className="relative">
-                  <div className="h-4 w-32 bg-slate-200/70 rounded mb-4"></div>
-                  <div className="space-y-2.5">
-                    <div className="h-2.5 w-full bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[92%] bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[60%] bg-slate-100 rounded"></div>
-                  </div>
-               </div>
+               <div className="relative z-10 flex flex-col gap-8 select-none">
+                 
+                 {/* Ghost Section 1: Summary */}
+                 <div className="space-y-3 opacity-30 hover:opacity-40 transition-opacity duration-700 animate-pulse-slow">
+                   <h3 className="text-xs font-bold text-slate-800 uppercase tracking-widest flex items-center gap-2">
+                     Appraisal Summary
+                     <span className="h-1 w-1 rounded-full bg-slate-400"></span>
+                   </h3>
+                   <div className="text-sm text-slate-500 leading-relaxed font-serif italic">
+                     "Assessment of a 45-year-old male with new-onset tension headaches. Excluded red flags through history and fundoscopy. Discussed lifestyle factors and stress management..."
+                   </div>
+                 </div>
 
-               {/* Skeleton Item 2 */}
-               <div className="relative">
-                  <div className="h-4 w-24 bg-slate-200/70 rounded mb-4"></div>
-                  <div className="space-y-2.5">
-                    <div className="h-2.5 w-full bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[98%] bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[95%] bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[80%] bg-slate-100 rounded"></div>
-                  </div>
-               </div>
+                 {/* Ghost Section 2: Reflection */}
+                 <div className="space-y-3 opacity-25 hover:opacity-35 transition-opacity duration-700 animate-pulse-slow" style={{ animationDelay: '150ms' }}>
+                   <h3 className="text-xs font-bold text-slate-800 uppercase tracking-widest">Reflection</h3>
+                   <div className="text-sm text-slate-500 leading-relaxed font-serif italic space-y-2">
+                     <p>"I felt it was important to validate his stress while ensuring no organic cause was missed. I used the CHECK model to structure the consultation..."</p>
+                     <p>"Reflecting on the interaction, I demonstrated empathy but could have explored his occupation triggers in more depth during the initial pass..."</p>
+                   </div>
+                 </div>
 
-               {/* Skeleton Item 3 */}
-               <div className="relative">
-                  <div className="h-4 w-36 bg-slate-200/70 rounded mb-4"></div>
-                  <div className="space-y-2.5">
-                    <div className="h-2.5 w-[70%] bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[65%] bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[75%] bg-slate-100 rounded"></div>
-                  </div>
+                 {/* Ghost Section 3: Capabilities */}
+                 <div className="space-y-3 opacity-25 hover:opacity-35 transition-opacity duration-700 animate-pulse-slow" style={{ animationDelay: '300ms' }}>
+                   <h3 className="text-xs font-bold text-slate-800 uppercase tracking-widest">Linked Capabilities</h3>
+                   <div className="flex flex-wrap gap-2">
+                     <span className="px-2 py-1 rounded border border-slate-300 text-[10px] text-slate-500 font-medium">Decision-making and Diagnosis</span>
+                     <span className="px-2 py-1 rounded border border-slate-300 text-[10px] text-slate-500 font-medium">Communicating and Consulting</span>
+                     <span className="px-2 py-1 rounded border border-slate-300 text-[10px] text-slate-500 font-medium">Holistic practice</span>
+                   </div>
+                 </div>
+                 
+                 {/* Ghost Section 4: Actions */}
+                 <div className="space-y-3 opacity-25 hover:opacity-35 transition-opacity duration-700 animate-pulse-slow" style={{ animationDelay: '450ms' }}>
+                    <h3 className="text-xs font-bold text-slate-800 uppercase tracking-widest">Actions / PDP</h3>
+                    <ul className="list-disc pl-4 space-y-1 text-sm text-slate-500 font-serif italic">
+                      <li>Review NICE guidelines on headache management.</li>
+                      <li>Practice "iceberg" questioning technique in next clinic.</li>
+                    </ul>
+                 </div>
+
                </div>
                
-               {/* Skeleton Item 4 */}
-               <div className="relative">
-                  <div className="h-4 w-28 bg-slate-200/70 rounded mb-4"></div>
-                  <div className="space-y-2.5">
-                    <div className="h-2.5 w-[90%] bg-slate-100 rounded"></div>
-                    <div className="h-2.5 w-[85%] bg-slate-100 rounded"></div>
-                  </div>
-               </div>
-
+               {/* Overlay gradient to fade out bottom */}
+               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#fcfdfd] to-transparent pointer-events-none"></div>
             </div>
           )}
         </div>

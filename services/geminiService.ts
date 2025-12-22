@@ -12,11 +12,11 @@ const responseSchema: Schema = {
   properties: {
     summary: {
       type: Type.STRING,
-      description: "The title of the case followed by a 2-3 sentence summary.",
+      description: "Markdown string. A title (H3) followed by a 2-3 sentence summary.",
     },
     capabilities: {
       type: Type.STRING,
-      description: "Markdown bullet list of the 3 selected capabilities. Each justification MUST be written in the FIRST PERSON (e.g. 'I discussed...', 'I analysed...', 'I demonstrated...').",
+      description: "Markdown bullet list of the 3 selected capabilities. Each item must be a single line following the format '**Capability Name**: First-person justification'.",
     },
     reflection: {
       type: Type.STRING,
@@ -69,10 +69,13 @@ Create an appraisal-ready output in UK clinical tone.
 Keep it factual; do not add new clinical facts.
 
 Field Requirements:
-1. summary: Combine a short Title (max 12 words) and a Summary (2–3 sentences) into this field.
-2. capabilities: Pick exactly 3 (if AUTO) or use user selections. Format as a markdown list. CRITICAL: WRITE JUSTIFICATIONS IN THE FIRST PERSON (e.g. "I discussed...", "I checked...").
+1. summary: Combine a short Title (max 12 words) and a Summary (2–3 sentences) into this field. Use a Markdown Heading 3 (###) for the title.
+2. capabilities: Pick exactly 3 (if AUTO) or use user selections. Format as a markdown bullet list.
+   - STRICT FORMAT: "* **[Capability Name]**: [Single line justification in first person]."
+   - Example: "* **Communication**: I explained the diagnosis clearly to the patient's family."
+   - Ensure the justifications are concise (single line) and use "I did...", "I analyzed..." phrasing.
 3. reflection: Write a concise reflection on the event.
-4. learningGoals: 3 bullets (specific, realistic, non-fluffy).
+4. learningGoals: 3 markdown bullets (specific, realistic, non-fluffy).
 `;
 
   try {
